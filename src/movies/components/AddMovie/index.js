@@ -1,4 +1,4 @@
-import AddField from "./AddField";
+import AddMovie from "./AddMovie";
 import { connect } from "react-redux";
 import { fetchMovies, clearSearch, addMovie } from "../../store/actions";
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddField);
+)(AddMovie);

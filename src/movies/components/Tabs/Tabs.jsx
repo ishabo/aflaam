@@ -20,7 +20,11 @@ const SActiveStyle = css`
 `;
 
 const SInSactiveStyle = css`
+  border: 1px dotted #ccc;
+  border-radius: 4px;
   border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   cursor: pointer;
 `;
 

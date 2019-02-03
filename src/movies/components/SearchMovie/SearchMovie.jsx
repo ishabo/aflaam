@@ -10,7 +10,7 @@ const STextInput = styled.input`
   width: 300px;
 `;
 
-const SSearchField = styled.div`
+const SSearchMovie = styled.div`
   display: flex;
   justify-content: space-between;
   width: fit-content;
@@ -33,22 +33,22 @@ const SSearchField = styled.div`
   }
 `;
 
-const SearchField = ({ onSearch, placeholder }) => {
+const SearchMovie = ({ onSearch, placeholder }) => {
   const handleChange = event => {
     onSearch(event.target.value);
   };
 
   return (
-    <SSearchField>
+    <SSearchMovie>
       <STextInput placeholder={placeholder} onChange={handleChange} />
       <img src="images/search-icon.svg" alt="Search" />
-    </SSearchField>
+    </SSearchMovie>
   );
 };
 
-SearchField.propTypes = {
+SearchMovie.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired
 };
 
-export default SearchField;
+export default SearchMovie;

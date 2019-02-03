@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 
 import { types, saveMovies } from "../actions";
 import { fetchMovies } from "../../services";
@@ -11,10 +11,10 @@ export function* fetchMoviesSaga({ purpose, searchKeyword }) {
     }
     yield put(saveMovies(result.data.Search, purpose));
   } catch (error) {
-    console.warn("An error occured, could not fetch movies", error);
+    console.warn("An error occurred, could not fetch movies", error);
   }
 }
 
 export const watcher = () => {
-  return [takeLatest(types.FETCH_MOVIES, fetchMoviesSaga)];
+  return [takeEvery(types.FETCH_MOVIES, fetchMoviesSaga)];
 };

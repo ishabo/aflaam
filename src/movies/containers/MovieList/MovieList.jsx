@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Tabs, Grid, AddField, SearchField } from "../../components";
+import { Tabs, MovieGrid, AddMovie, SearchMovie } from "../../components";
 import { SMoviesListLayout } from "../../styles/elements";
 
 const SFilters = styled.div`
@@ -44,7 +44,7 @@ class MovieList extends React.Component {
   render() {
     return (
       <SMoviesListLayout>
-        <AddField
+        <AddMovie
           placeholder="Movie..."
           buttonText="Add"
           onAdd={() => {
@@ -71,13 +71,13 @@ class MovieList extends React.Component {
             setActive={this.setActive}
           />
 
-          <SearchField
+          <SearchMovie
             onSearch={this.captureSearchKeyword}
             placeholder="Filter added movies..."
           />
         </SFilters>
 
-        <Grid
+        <MovieGrid
           itemList={this.getFilteredMovies(
             this.state.activeTab === "watched",
             this.state.searchKeyword
